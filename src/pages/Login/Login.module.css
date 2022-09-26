@@ -1,0 +1,58 @@
+.form-container {
+  background-color: var(--background-dark-color);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container .form-wrapper {
+  background-color: var(--background-chat-light);
+  padding: 20px 60px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.form-container .form-wrapper .form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 25vh;
+}
+
+.form-container .form-wrapper .form input {
+  background-color: var(--background-chat-light);
+  padding: 15px;
+  border: none;
+  border-bottom: 1px solid var(--bright-green);
+  outline: none;
+}
+
+.form-container .form-wrapper .form input::placeholder {
+  color: var(--background-dark-color);
+}
+
+.form-container .form-wrapper .form input:focus {
+  border: 2px solid var(--header-dark-color);
+  border-radius: 5px;
+  background-color: white;
+}
+
+.form-container .form-wrapper .form button {
+  background-color: var(--bright-green);
+  color: var(--header-dark-color);
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+
+  cursor: pointer;
+}
+
+.form-container .form-wrapper p {
+  color: var(--header-dark-color);
+  font-size: 12px;
+  margin-top: 10px;
+}

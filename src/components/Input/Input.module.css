@@ -1,0 +1,40 @@
+.input {
+  height: 50px;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input .send {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.input .send label {
+  position: relative;
+  top: 2px;
+}
+
+.input .send button {
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  background-color: var(--header-light-color);
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.input input {
+  border: none;
+  outline: none;
+  width: 100%;
+  color: var(--background-dark-color);
+  font-size: 18px;
+}
+
+.input input::placeholder {
+  color: lightgray;
+}

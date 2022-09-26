@@ -1,0 +1,48 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: var(--header-dark-color);
+  height: 50px;
+  padding: 10px;
+  justify-content: space-around;
+  color: white;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  color: var(--bright-green);
+}
+
+.navbar .user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar .user img {
+  background-color: white;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.navbar .user button {
+  border-radius: 1px;
+  height: 20px;
+  background-color: var(--header-light-color);
+  color: white;
+  font-size: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar .logo {
+    display: none;
+  }
+  .navbar .user button {
+    position: absolute;
+    bottom: 10px;
+  }
+}

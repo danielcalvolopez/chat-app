@@ -1,0 +1,40 @@
+.home {
+  background: var(--background-dark-color);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 65%;
+  height: 80%;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 7px 7px 0 #f1b24a;
+}
+
+.sidebar {
+  flex: 1;
+  background: linear-gradient(
+    90deg,
+    var(--background-lighter-color) 0%,
+    var(--header-light-color) 100%
+  );
+  position: relative;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.chat {
+  flex: 2;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+}

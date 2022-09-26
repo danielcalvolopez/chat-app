@@ -1,0 +1,6 @@
+.messages {
+  background-color: var(--background-chat-light);
+  padding: 10px;
+  height: calc(100% - 160px);
+  overflow: scroll;
+}
