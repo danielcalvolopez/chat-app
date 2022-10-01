@@ -1,13 +1,18 @@
 import { createContext, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { onAuthStateChange } from "../firebase";
+import { allRoutes, privateRoutesPaths } from "../utils/routes";
 
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState({});
+  const [currentUser, setCurrentUser] = useState(undefined);
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
+
+  const { pathname } = useLocation();
+
+  console.log(currentUser);
 
   useEffect(() => {
     const getCurrentUser = async () => {
@@ -15,15 +20,23 @@ export const AuthContextProvider = ({ children }) => {
         onAuthStateChange(async (user) => {
           if (user?.hasOwnProperty("email")) {
             setCurrentUser({ email: user.email });
-
-            navigate("/");
+            if (pathname === allRoutes.login.path) {
+              navigate(allRoutes.home.path);
+            }
+          } else {
+            const isPrivateRoute = privateRoutesPaths.some(
+              (route) => route === pathname
+            );
+            if (isPrivateRoute) {
+              navigate(allRoutes.login.path);
+            }
           }
         });
       } catch (error) {}
       setIsLoading(false);
     };
     getCurrentUser();
-  }, [navigate]);
+  }, [navigate, pathname]);
 
   return (
     <AuthContext.Provider value={currentUser}>

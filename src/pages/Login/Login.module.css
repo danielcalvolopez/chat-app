@@ -56,3 +56,9 @@
   font-size: 12px;
   margin-top: 10px;
 }
+
+.routerlink {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}

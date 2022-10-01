@@ -1,17 +1,15 @@
-import Register from "./pages/Register/Register";
-import Login from "./pages/Login/Login";
-import Home from "./pages/Home/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthContextProvider } from "./context/AuthContext";
+import { allRoutes } from "./utils/routes";
 
 const App = () => {
   return (
     <BrowserRouter>
       <AuthContextProvider>
         <Routes>
-          <Route index element={<Home />} />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
+          {Object.values(allRoutes).map(({ path, Element }) => (
+            <Route key={path} path={path} element={<Element />} />
+          ))}
         </Routes>
       </AuthContextProvider>
     </BrowserRouter>

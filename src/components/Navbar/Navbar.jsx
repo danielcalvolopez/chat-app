@@ -1,6 +1,23 @@
+import { signOut } from "firebase/auth";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../firebase";
 import classes from "./Navbar.module.css";
 
 const Navbar = () => {
+  const [err, setErr] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      navigate("/login");
+      console.log("signed out!");
+    } catch (err) {
+      setErr(true);
+    }
+  };
+
   return (
     <div className={classes.navbar}>
       <span className={classes.logo}>
@@ -12,7 +29,8 @@ const Navbar = () => {
           alt="john"
         ></img>
         <span>John</span>
-        <button>Logout</button>
+        <button onClick={handleLogout}>Logout</button>
+        {err && <p className={classes.error}>Something went wrong!</p>}
       </div>
     </div>
   );
