@@ -2,6 +2,7 @@ import { signOut } from "firebase/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
+import { allRoutes } from "../../utils/routes";
 import classes from "./Navbar.module.css";
 
 const Navbar = () => {
@@ -11,8 +12,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      navigate("/login");
-      console.log("signed out!");
+      navigate(allRoutes.login.path);
     } catch (err) {
       setErr(true);
     }

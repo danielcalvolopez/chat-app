@@ -12,8 +12,6 @@ export const AuthContextProvider = ({ children }) => {
 
   const { pathname } = useLocation();
 
-  console.log(currentUser);
-
   useEffect(() => {
     const getCurrentUser = async () => {
       try {

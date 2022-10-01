@@ -36,8 +36,8 @@ const Login = () => {
         {err && <p className={classes.error}>Something went wrong!</p>}
         <p>
           Don't you have an account?
-          <Link className={classes.routerlink} to={allRoutes.register}>
-            Register
+          <Link className={classes.routerlink} to={allRoutes.register.path}>
+            &nbsp;Register
           </Link>
         </p>
       </div>
