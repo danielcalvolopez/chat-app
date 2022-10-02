@@ -1,13 +1,18 @@
 import { signOut } from "firebase/auth";
+import { useContext } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 import { auth } from "../../firebase";
 import { allRoutes } from "../../utils/routes";
 import classes from "./Navbar.module.css";
 
 const Navbar = () => {
+  const currentUser = useContext(AuthContext);
   const [err, setErr] = useState(false);
   const navigate = useNavigate();
+
+  console.log(currentUser);
 
   const handleLogout = async () => {
     try {
@@ -24,11 +29,8 @@ const Navbar = () => {
         <img src={process.env.PUBLIC_URL + "images/logo.svg"} alt="logo" />
       </span>
       <div className={classes.user}>
-        <img
-          src="https://images.pexels.com/photos/13187759/pexels-photo-13187759.jpeg?cs=srgb&dl=pexels-tim-mossholder-13187759.jpg&fm=jpg"
-          alt="john"
-        ></img>
-        <span>John</span>
+        <img src={currentUser?.photoURL} alt="john"></img>
+        <span>{currentUser?.displayName}</span>
         <button onClick={handleLogout}>Logout</button>
         {err && <p className={classes.error}>Something went wrong!</p>}
       </div>

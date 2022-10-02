@@ -45,7 +45,6 @@
   border: 0;
   display: flex;
   justify-content: center;
-
   font-weight: bold;
 }
 
@@ -59,8 +58,11 @@
   padding: 10px;
   font-weight: bold;
   border: none;
-
   cursor: pointer;
+}
+
+.form-container .form-wrapper .form button:hover {
+  background-color: #f1b14ac3;
 }
 
 .form-container .form-wrapper p {

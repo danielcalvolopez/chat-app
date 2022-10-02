@@ -2,6 +2,7 @@ import { createContext, useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { onAuthStateChange } from "../firebase";
 import { allRoutes, privateRoutesPaths } from "../utils/routes";
+import { BounceLoader } from "react-spinners";
 
 export const AuthContext = createContext();
 
@@ -17,7 +18,7 @@ export const AuthContextProvider = ({ children }) => {
       try {
         onAuthStateChange(async (user) => {
           if (user?.hasOwnProperty("email")) {
-            setCurrentUser({ email: user.email });
+            setCurrentUser(user);
             if (pathname === allRoutes.login.path) {
               navigate(allRoutes.home.path);
             }
@@ -38,7 +39,7 @@ export const AuthContextProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider value={currentUser}>
-      {isLoading ? "Is loading..." : children}
+      {isLoading ? <BounceLoader /> : children}
     </AuthContext.Provider>
   );
 };
