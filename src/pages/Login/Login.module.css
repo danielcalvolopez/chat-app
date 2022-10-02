@@ -60,6 +60,10 @@
   margin-top: 10px;
 }
 
+.form-container .form-wrapper .error {
+  color: red;
+}
+
 .routerlink {
   text-decoration: none;
   color: inherit;

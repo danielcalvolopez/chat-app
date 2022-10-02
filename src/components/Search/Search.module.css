@@ -41,3 +41,7 @@
 input::placeholder {
   color: lightgray;
 }
+
+.search .error {
+  color: red;
+}
