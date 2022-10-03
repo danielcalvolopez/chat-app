@@ -30,7 +30,9 @@ const Input = () => {
     setImage(e.target.files[0]);
   };
 
-  const handleSendMessage = async () => {
+  const handleSendMessage = async (e) => {
+    e.preventDefault();
+
     if (image) {
       const storageRef = ref(storage, uuid());
 
@@ -75,7 +77,7 @@ const Input = () => {
   };
 
   return (
-    <div className={classes.input}>
+    <form className={classes.input}>
       <input
         type="text"
         placeholder="Type something..."
@@ -98,7 +100,7 @@ const Input = () => {
           Send
         </button>
       </div>
-    </div>
+    </form>
   );
 };
 
