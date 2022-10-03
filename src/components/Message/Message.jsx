@@ -1,6 +1,6 @@
 import classes from "./Message.module.css";
 
-const Message = () => {
+const Message = ({ message }) => {
   return (
     <div className={`${classes.message} ${classes.owner}`}>
       <div className={classes.info}>

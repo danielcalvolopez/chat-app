@@ -12,7 +12,7 @@ const Chats = () => {
   console.log(Object.entries(chats));
 
   const currentUser = useContext(AuthContext);
-  const dispatch = useContext(ChatContext);
+  const chatContext = useContext(ChatContext);
 
   useEffect(() => {
     const getChats = () => {
@@ -32,7 +32,7 @@ const Chats = () => {
   }, [currentUser?.uid]);
 
   const handleSelect = (u) => {
-    dispatch({ type: "CHANGE_USER", payload: u });
+    chatContext.dispatch({ type: "CHANGE_USER", payload: u });
   };
 
   return (

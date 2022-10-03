@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { ChatContext } from "../../context/ChatContext";
 
 const Chat = ({ className }) => {
-  const data = useContext(ChatContext);
+  const { data } = useContext(ChatContext);
 
   return (
     <div className={className}>
