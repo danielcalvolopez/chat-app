@@ -1,17 +1,31 @@
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { ChatContext } from "../../context/ChatContext";
 import classes from "./Message.module.css";
 
 const Message = ({ message }) => {
+  const currentUser = useContext(AuthContext);
+  const { data } = useContext(ChatContext);
   return (
-    <div className={`${classes.message} ${classes.owner}`}>
+    <div
+      className={`${classes.message} ${
+        message.senderId === currentUser.uid && classes.owner
+      }`}
+    >
       <div className={classes.info}>
         <img
-          src="https://images.pexels.com/photos/13187759/pexels-photo-13187759.jpeg?cs=srgb&dl=pexels-tim-mossholder-13187759.jpg&fm=jpg"
-          alt="john"
+          src={
+            message.senderId === currentUser.uid
+              ? currentUser.photoURL
+              : data.user.photoURL
+          }
+          alt=""
         />
         <span>just now</span>
       </div>
       <div className={classes.content}>
-        <p>hello</p>
+        <p>{message.text}</p>
+        {message.image && <img src={message.image} alt="" />}
       </div>
     </div>
   );
