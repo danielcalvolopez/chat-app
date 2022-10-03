@@ -36,7 +36,7 @@ const Chats = () => {
   };
 
   const sortedChats = Object.entries(chats)?.sort(
-    (a, b) => b[1].date - a[1].date
+    (chatA, chatB) => chatB[1].date - chatA[1].date
   );
   return (
     <div className={classes.chats}>
@@ -46,7 +46,7 @@ const Chats = () => {
           key={chat[0]}
           onClick={() => handleSelect(chat[1].userInfo)}
         >
-          <img src={chat[1].userInfo.photoURL} alt="john" />
+          <img src={chat[1].userInfo.photoURL} alt="" />
           <div className={classes["user-chat-info"]}>
             <span>{chat[1].userInfo.displayName}</span>
             <p>{chat[1].lastMessage?.text}</p>
