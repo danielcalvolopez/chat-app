@@ -9,8 +9,6 @@ import classes from "./Chats.module.css";
 const Chats = () => {
   const [chats, setChats] = useState([]);
 
-  console.log(Object.entries(chats));
-
   const currentUser = useContext(AuthContext);
   const chatContext = useContext(ChatContext);
 
@@ -49,7 +47,11 @@ const Chats = () => {
           <img src={chat[1].userInfo.photoURL} alt="" />
           <div className={classes["user-chat-info"]}>
             <span>{chat[1].userInfo.displayName}</span>
-            <p>{chat[1].lastMessage?.text}</p>
+            <p>
+              {chat[1].lastMessage?.text
+                ? chat[1].lastMessage?.text
+                : "image attached"}
+            </p>
           </div>
         </div>
       ))}

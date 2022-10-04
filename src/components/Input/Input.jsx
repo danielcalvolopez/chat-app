@@ -10,7 +10,6 @@ import {
   arrayUnion,
   doc,
   serverTimestamp,
-  Timestamp,
   updateDoc,
 } from "firebase/firestore";
 import { db, storage } from "../../firebase";
@@ -23,6 +22,8 @@ const Input = () => {
   const currentUser = useContext(AuthContext);
   const { data } = useContext(ChatContext);
 
+  const date = new Date();
+
   const handleTextInput = (e) => {
     setText(e.target.value);
   };
@@ -32,6 +33,10 @@ const Input = () => {
 
   const handleSendMessage = async (e) => {
     e.preventDefault();
+
+    // if (text === "") {
+    //   return;
+    // }
 
     if (image) {
       const storageRef = ref(storage, uuid());
@@ -44,7 +49,7 @@ const Input = () => {
             id: uuid(),
             text,
             senderId: currentUser.uid,
-            date: Timestamp.now(),
+            date: date.toLocaleTimeString("en-UK"),
             img: downloadURL,
           }),
         });
@@ -55,7 +60,7 @@ const Input = () => {
           id: uuid(),
           text,
           senderId: currentUser.uid,
-          date: Timestamp.now(),
+          date: date.toLocaleTimeString("en-UK"),
         }),
       });
     }
@@ -74,6 +79,7 @@ const Input = () => {
     });
     setText("");
     setImage(null);
+    // setTime(date.toLocaleTimeString("en-UK"));
   };
 
   return (

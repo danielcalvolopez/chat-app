@@ -23,8 +23,6 @@ const Search = () => {
 
   const currentUser = useContext(AuthContext);
 
-  console.log(user);
-
   const handleSearchInput = (e) => {
     setUsername(e.target.value);
   };

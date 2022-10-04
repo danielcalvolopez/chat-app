@@ -12,8 +12,6 @@ const Navbar = () => {
   const [err, setErr] = useState(false);
   const navigate = useNavigate();
 
-  console.log(currentUser);
-
   const handleLogout = async () => {
     try {
       await signOut(auth);

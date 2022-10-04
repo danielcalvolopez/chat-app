@@ -30,7 +30,7 @@ const Message = ({ message }) => {
           }
           alt=""
         />
-        <span>just now</span>
+        <span>{message.date}</span>
       </div>
       <div className={classes.content}>
         <p>{message.text}</p>
