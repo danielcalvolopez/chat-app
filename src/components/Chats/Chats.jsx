@@ -33,9 +33,10 @@ const Chats = () => {
     chatContext.dispatch({ type: "CHANGE_USER", payload: u });
   };
 
-  const sortedChats = Object.entries(chats)?.sort(
+  const sortedChats = Object.entries(chats).sort(
     (chatA, chatB) => chatB[1].date - chatA[1].date
   );
+
   return (
     <div className={classes.chats}>
       {sortedChats.map((chat) => (
@@ -48,9 +49,8 @@ const Chats = () => {
           <div className={classes["user-chat-info"]}>
             <span>{chat[1].userInfo.displayName}</span>
             <p>
-              {chat[1].lastMessage?.text
-                ? chat[1].lastMessage?.text
-                : "image attached"}
+              {chat[1].lastMessage?.text && chat[1].lastMessage?.text}
+              {chat[1].lastMessage?.photoURL && "image attached"}
             </p>
           </div>
         </div>

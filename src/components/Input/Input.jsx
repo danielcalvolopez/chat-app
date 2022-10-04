@@ -24,6 +24,8 @@ const Input = () => {
 
   const date = new Date();
 
+  const currentTime = date.getHours() + ":" + date.getMinutes();
+
   const handleTextInput = (e) => {
     setText(e.target.value);
   };
@@ -49,7 +51,7 @@ const Input = () => {
             id: uuid(),
             text,
             senderId: currentUser.uid,
-            date: date.toLocaleTimeString("en-UK"),
+            date: currentTime,
             img: downloadURL,
           }),
         });
@@ -60,7 +62,7 @@ const Input = () => {
           id: uuid(),
           text,
           senderId: currentUser.uid,
-          date: date.toLocaleTimeString("en-UK"),
+          date: currentTime,
         }),
       });
     }
