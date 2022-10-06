@@ -36,9 +36,9 @@ const Input = () => {
   const handleSendMessage = async (e) => {
     e.preventDefault();
 
-    // if (text === "") {
-    //   return;
-    // }
+    if (text === "") {
+      return;
+    }
 
     if (image) {
       const storageRef = ref(storage, uuid());
