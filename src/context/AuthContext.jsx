@@ -1,8 +1,9 @@
 import { createContext, useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import LoadingSpinner from "../components/UI/LoadingSpinner";
 import { onAuthStateChange } from "../firebase";
 import { allRoutes, privateRoutesPaths } from "../utils/routes";
-import { BounceLoader } from "react-spinners";
+import classes from "./AuthContext.module.css";
 
 export const AuthContext = createContext();
 
@@ -39,7 +40,13 @@ export const AuthContextProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider value={currentUser}>
-      {isLoading ? <BounceLoader /> : children}
+      {isLoading ? (
+        <div className={classes.loading}>
+          <LoadingSpinner />
+        </div>
+      ) : (
+        children
+      )}
     </AuthContext.Provider>
   );
 };

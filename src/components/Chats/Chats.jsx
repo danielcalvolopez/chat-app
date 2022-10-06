@@ -7,14 +7,14 @@ import { db } from "../../firebase";
 import classes from "./Chats.module.css";
 
 const Chats = () => {
-  const [chats, setChats] = useState([]);
+  const [chats, setChats] = useState({});
 
   const currentUser = useContext(AuthContext);
   const chatContext = useContext(ChatContext);
 
   useEffect(() => {
-    const getChats = () => {
-      const unsub = onSnapshot(
+    const getChats = async () => {
+      const unsub = await onSnapshot(
         doc(db, "userChats", currentUser?.uid),
         (doc) => {
           setChats(doc.data());
@@ -33,13 +33,13 @@ const Chats = () => {
     chatContext.dispatch({ type: "CHANGE_USER", payload: u });
   };
 
-  const sortedChats = Object.entries(chats).sort(
+  const sort = Object.entries(chats || {}).sort(
     (chatA, chatB) => chatB[1].date - chatA[1].date
   );
 
   return (
     <div className={classes.chats}>
-      {sortedChats.map((chat) => (
+      {sort.map((chat) => (
         <div
           className={classes["user-chat"]}
           key={chat[0]}

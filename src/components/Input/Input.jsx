@@ -81,7 +81,6 @@ const Input = () => {
     });
     setText("");
     setImage(null);
-    // setTime(date.toLocaleTimeString("en-UK"));
   };
 
   return (
