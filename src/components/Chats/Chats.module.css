@@ -1,3 +1,8 @@
+.chats {
+  position: relative;
+  overflow-y: scroll;
+}
+
 .chats .user-chat {
   padding: 10px;
   display: flex;

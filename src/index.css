@@ -5,12 +5,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: sans-serif;
 
-  --background-dark-color: #123732;
+  --background-dark-color: #91b2f2;
   --background-lighter-color: #4d774e;
-  --header-dark-color: #164a41;
-  --header-light-color: #9dc88d;
+  --header-dark-color: #0e1f40;
+  --header-light-color: #0e1f40;
   --bright-green: #f1b24a;
-  --background-chat-light: #d4ebcd;
+  --background-chat-light: #f2f2f2;
 }
 
 code {

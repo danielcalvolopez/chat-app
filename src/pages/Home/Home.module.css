@@ -12,17 +12,13 @@
   display: flex;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 7px 7px 0 #f1b24a;
 }
 
 .sidebar {
   flex: 1;
-  background: linear-gradient(
-    90deg,
-    var(--background-lighter-color) 0%,
-    var(--header-light-color) 100%
-  );
+  background: var(--header-light-color);
   position: relative;
+  overflow: scroll;
 }
 
 .sidebar::-webkit-scrollbar {
