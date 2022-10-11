@@ -7,7 +7,7 @@
 }
 
 .form-container .form-wrapper {
-  background-color: var(--background-chat-light);
+  background-color: #0e1f40;
   padding: 20px 60px;
   border-radius: 10px;
   display: flex;
@@ -24,19 +24,20 @@
 }
 
 .form-container .form-wrapper .form input {
-  background-color: var(--background-chat-light);
+  background-color: #91b2f2;
   padding: 15px;
   border: none;
   border-bottom: 1px solid var(--bright-green);
   outline: none;
+  border-radius: 5px;
 }
 
 .form-container .form-wrapper .form input::placeholder {
-  color: var(--background-dark-color);
+  color: #0e1f40;
 }
 
 .form-container .form-wrapper .form input:focus {
-  border: 2px solid var(--header-dark-color);
+  border: 2px solid #91b2f2;
   border-radius: 5px;
   background-color: white;
 }
@@ -48,14 +49,15 @@
   font-weight: bold;
   border: none;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .form-container .form-wrapper .form button:hover {
-  background-color: #f1b14ac3;
+  background-color: #91b2f2;
 }
 
 .form-container .form-wrapper p {
-  color: var(--header-dark-color);
+  color: var(--bright-green);
   font-size: 12px;
   margin-top: 10px;
 }

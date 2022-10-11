@@ -30,11 +30,12 @@
 .navbar .user button {
   border-radius: 1px;
   height: 20px;
-  background-color: var(--header-light-color);
+  background-color: #021e73;
   color: white;
   font-size: 10px;
   border: none;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 @media (max-width: 768px) {

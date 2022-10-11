@@ -51,6 +51,6 @@
 
 .owner .content p {
   background-color: var(--bright-green);
-  color: var(--background-dark-color);
+  color: var(--background-chat-light);
   border-radius: 10px 0px 10px 10px;
 }

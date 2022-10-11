@@ -13,7 +13,7 @@
 }
 
 .chats .user-chat:hover {
-  background-color: var(--header-dark-color);
+  background-color: #24385fae;
 }
 
 .chats .user-chat-info span {

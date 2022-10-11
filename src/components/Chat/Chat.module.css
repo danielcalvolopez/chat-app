@@ -1,13 +1,12 @@
 .chat-info {
   height: 50px;
   background: #0e1f40c2;
-
   background-size: 9px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  color: white;
+  color: var(--background-chat-light);
 }
 
 .chat-info span {
