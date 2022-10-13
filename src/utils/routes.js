@@ -1,6 +1,8 @@
-import Home from "../pages/Home/Home";
-import Login from "../pages/Login/Login";
-import Register from "../pages/Register/Register";
+import React from "react";
+
+const Home = React.lazy(() => import("../pages/Home/Home"));
+const Register = React.lazy(() => import("../pages/Register/Register"));
+const Login = React.lazy(() => import("../pages/Login/Login"));
 
 export const allRoutes = {
   home: {

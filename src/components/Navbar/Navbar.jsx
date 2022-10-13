@@ -27,7 +27,7 @@ const Navbar = () => {
         <img src={process.env.PUBLIC_URL + "images/logo.svg"} alt="logo" />
       </span>
       <div className={classes.user}>
-        <img src={currentUser?.photoURL} alt="john"></img>
+        <img src={currentUser?.photoURL} alt="userpic"></img>
         <span>{currentUser?.displayName}</span>
         <button onClick={handleLogout}>Logout</button>
         {err && <p className={classes.error}>Something went wrong!</p>}
